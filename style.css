@@ -4,7 +4,6 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
-    padding-bottom: 80px; /* espaço para o footer fixo (ajuste conforme a altura do footer) */
 }
 
 .text-warning {
@@ -47,27 +46,14 @@ body {
 }
 
 footer {
-    position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
-    height: 60px; /* ajustar conforme necessário */
+    height: 0px; /* ajustar conforme necessário */
     background-color: rgba(0,0,0,0.85); /* manter seu estilo atual ou ajustar */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-}
-
-.icons-ft{
-    color: #ffffff;
-    margin: 0 10px;
-    font-size: 1.5rem;
-    transition: color 0.2s;
-    display: block;
-}
-footer a.text-white:hover {
-    text-decoration: underline; /* Adiciona um sublinhado no hover */   
-    color: #ffc107 !important; /* Muda para a cor de destaque no hover */
-    transition: color 0.2s;
+    font-size: 12px;
 }
