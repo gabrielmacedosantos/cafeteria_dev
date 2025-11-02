@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria Dev - Cardápio Digital</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <header class="text-center p-4 bg-light shadow-sm">
+        <h1 class="display-4 fw-bold">Cafeteria <span class="text-warning">Dev</span></h1>
+        <p class="lead">Nosso cardápio digital</p>
+    </header>
+
+    <main class="container mt-5">
+        
+        <div class="mb-4">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text bg-dark text-white"><i class="bi bi-search"></i></span>
+                <input type="text" id="searchInput" class="form-control" placeholder="Buscar por nome ou descrição...">
+            </div>
+        </div>
+
+        <div id="filtros-categoria" class="text-center mb-4">
+            <button class="btn btn-dark filter-btn" data-category="todos">Todos</button>
+            <button class="btn btn-outline-dark filter-btn" data-category="cafe">Cafés</button>
+            <button class="btn btn-outline-dark filter-btn" data-category="salgado">Salgados</button>
+            <button class="btn btn-outline-dark filter-btn" data-category="doce">Doces</button>
+        </div>
+
+        <div id="cardapio-grid" class="row g-4">
+            
+            <div class="col-md-6 col-lg-4 menu-item" data-category="cafe">
+                <div class="card h-100 shadow-sm border-0 menu-card" data-bs-toggle="modal" data-bs-target="#itemModal" 
+                     data-full-description="Nosso clássico espresso italiano, tirado com perfeição para um sabor rico e uma crema aveludada.">
+                    <img src="https://www.estadao.com.br/resizer/v2/2JQ2FIMPBBCQPLTF5YBLSNWJIM.jpeg?quality=80&auth=dc7953c6800d0abdd397975e12b4f123e4da6ef2f0b4e461adff9a1a93444771&width=1075&height=527&focal=3407,3355" class="card-img-top" alt="Espresso">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Espresso</h5>
+                        <p class="card-text text-muted">Café puro e intenso, a base de tudo.</p>
+                        <h5 class="fw-bold text-warning">R$ 6,00</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 menu-item" data-category="salgado">
+                <div class="card h-100 shadow-sm border-0 menu-card" data-bs-toggle="modal" data-bs-target="#itemModal"
+                     data-full-description="A mais amada do Brasil! Massa de batata recheada com frango desfiado cremoso e um toque de catupiry. Frita na hora.">
+                    <img src="https://guiadacozinha.com.br/wp-content/uploads/2018/08/coxinhadefrangocremosa.webp" class="card-img-top" alt="Coxinha">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Coxinha de Frango</h5>
+                        <p class="card-text text-muted">A clássica coxinha cremosa com catupiry.</p>
+                        <h5 class="fw-bold text-warning">R$ 8,50</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 menu-item" data-category="doce">
+                <div class="card h-100 shadow-sm border-0 menu-card" data-bs-toggle="modal" data-bs-target="#itemModal"
+                     data-full-description="Bolo de chocolate denso e macio, servido quente com uma generosa bola de sorvete de creme e calda de chocolate.">
+                    <img src="https://recipesblob.oetker.com.br/assets/677216088b6540a0b110ca1d74479af6/964x526/brownie-com-sorvete.jpg" class="card-img-top" alt="Brownie">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Brownie com Sorvete</h5>
+                        <p class="card-text text-muted">Brownie quente com uma bola de sorvete de creme.</p>
+                        <h5 class="fw-bold text-warning">R$ 15,00</h5>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 menu-item" data-category="cafe">
+                <div class="card h-100 shadow-sm border-0 menu-card" data-bs-toggle="modal" data-bs-target="#itemModal"
+                     data-full-description="A combinação perfeita de espresso, leite vaporizado e uma generosa camada de espuma de leite. Polvilhado com cacau.">
+                    <img src="https://umdiabetico.com.br/wp-content/uploads/2024/09/capuccino-e-diabetes.jpg" class="card-img-top" alt="Cappuccino">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Cappuccino</h5>
+                        <p class="card-text text-muted">Espresso, leite vaporizado e espuma de leite.</p>
+                        <h5 class="fw-bold text-warning">R$ 10,00</h5>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h1 class="modal-title fs-4 fw-bold" id="modalTitle">Título do Produto</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="modalImage" class="img-fluid rounded mb-3" alt="Imagem do Produto">
+                    <p id="modalDescription" class="text-muted"></p>
+                    <h4 class="fw-bold text-warning" id="modalPrice">R$ 0,00</h4>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="bg-dark text-white p-4 mt-5 container-fluid">
+
+        <p class="mb-0">&copy; 2025 Cafeteria Dev. Todos os direitos reservados.</p>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+/* Importando uma fonte moderna do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    padding-bottom: 80px; /* espaço para o footer fixo (ajuste conforme a altura do footer) */
+}
+
+.text-warning {
+    color: #ffc107 !important;
+}
+
+/* Estilo dos cards */
+.menu-card {
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* Estilo dos botões de filtro */
+.filter-btn {
+    margin: 0 5px;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: 600;
+}
+
+/* (NOVO) Imagem do Modal */
+#modalImage {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px; /* ajustar conforme necessário */
+    background-color: rgba(0,0,0,0.85); /* manter seu estilo atual ou ajustar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.icons-ft{
+    color: #ffffff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+    display: block;
+}
+footer a.text-white:hover {
+    text-decoration: underline; /* Adiciona um sublinhado no hover */   
+    color: #ffc107 !important; /* Muda para a cor de destaque no hover */
+    transition: color 0.2s;
+}
